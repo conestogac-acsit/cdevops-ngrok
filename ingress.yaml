@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: ngrok
   rules:
-    - host: $NGROK_DOMAIN
+    - host: the-domain-that-you-got.ngrok-free.app
       http:
         paths:
           - path: /
