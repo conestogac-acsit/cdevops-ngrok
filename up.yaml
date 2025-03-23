@@ -16,9 +16,9 @@
       release_namespace: ngrok-ingress-controller
       create_namespace: true
       set_values:
-        - value: credentials.apiKey=$NGROK_API_KEY
+        - value: credentials.apiKey="{{ lookup('ansible.builtin.env', 'NGROK_API_KEY') }}"
           value_type: string
-        - value: credentials.authtoken=$NGROK_AUTHTOKEN
+        - value: credentials.authtoken="{{ lookup('ansible.builtin.env', 'NGROK_AUTHTOKEN') }}"
           value_type: string
   - name: install ingress
     kubernetes.core.k8s:
